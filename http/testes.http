@@ -1,0 +1,39 @@
+### Variables 
+@apiurl = http://localhost:8080
+
+### 
+GET {{apiurl}}/convites/gerar?qtd=10
+
+###
+GET {{apiurl}}/convites
+
+###
+GET {{apiurl}}/convites/validar-convite?id=7eecf469-2bb6-4425-a6d4-1fe9b56ec7a3
+
+###
+POST {{apiurl}}/usuarios/cadastrar
+Content-Type: application/json
+
+{
+   "user_id":"cleiton",
+   "password":"testeteste"   
+}
+
+###
+POST {{apiurl}}/usuarios/autenticar
+Content-Type: application/json
+
+{
+   "user_id":"cleiton",
+   "password":"testeteste"   
+}
+
+###
+GET {{apiurl}}/convites-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjUxMDk0MDgsInN1YiI6MX0.UeJ7HGNnY1_NWI-fJ_6g47L_gBDSYPPH4OtJRjzKLLI
+
+###
+GET {{apiurl}}/participantes
+
+###
+GET {{apiurl}}/jogos/listar-numeros
