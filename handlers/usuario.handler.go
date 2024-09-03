@@ -46,6 +46,7 @@ func (h Handler) CriarUsuario(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h Handler) Autenticar(w http.ResponseWriter, r *http.Request) {
+	println("dentro do autenticador...")
 	var usuario models.Usuario
 
 	err := json.NewDecoder(r.Body).Decode(&usuario)
@@ -53,6 +54,8 @@ func (h Handler) Autenticar(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+
+	println("recebido o usuario: ", usuario.UserId)
 
 	if (usuario.UserId == "") || (usuario.Password == "") {
 		http.Error(w, "UserId e Password devem ser informados", http.StatusBadRequest)
